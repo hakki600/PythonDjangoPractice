@@ -1,5 +1,5 @@
-import pandas as pd
 import os
+import pandas as pd
 
 ### 検索ツール
 def search():
@@ -49,7 +49,7 @@ def export(source):
     id = list(range(0, len(source), 1))
     df = pd.DataFrame({'id':id,
                        'name':source})
-    filepath = "C:\\Users\\hakki\\Documents\\Yonetani\\out.csv"
+    filepath = "./out.csv"
     df.to_csv(filepath, encoding='utf_8_sig')
 
 if __name__ == "__main__":
