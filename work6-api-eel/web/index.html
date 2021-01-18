@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakuten Search</title>
+    <!-- Bootstrap4 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container p-3">
+        <h1>楽天サーチ</h1>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>ショップコード</td>
+                    <td><input type="text" class="form-control" id="shop-code" placeholder="例: anker"></td>
+                </tr>
+                <tr>
+                    <td>取得件数</td>
+                    <td><input type="text" class="form-control" id="items-num" placeholder="例: 1000"></td>
+                </tr>
+                <tr>
+                    <td>順序</td>
+                    <td>
+                        <select class='custom-select' id="order-select">
+                            <!-- 昇順なぜかうまくいかない -->
+                            <option value="-itemPrice">価格順</option>
+                            <!-- <option value="+itemPrice">価格順（昇順）</option> -->
+                            <option value="-updateTimestamp">商品更新日時順</option>
+                            <!-- <option value="+updateTimestamp">商品更新日時順（昇順）</option> -->
+                            <option value="standard">楽天標準ソート順</option>
+                            <option value="-reviewCount">レビュー件数順</option>
+                            <!-- <option value="+reviewCount">レビュー件数順（昇順）</option> -->
+                            <option value="-reviewAverage">レビュー平均順</option>
+                            <!-- <option value="+reviewAverage">レビュー平均順（昇順）</option> -->
+                            <option value="-affiliateRate">アフィリエイト料率順</option>
+                            <!-- <option value="+affiliateRate">アフィリエイト料率順（昇順）</option> -->
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button id="get-items-btn" class="btn btn-primary btn-block mb-4" type="button">商品取得</button>
+
+        <!-- 検索結果表示 -->
+        <div class="form-group mb-4">
+            <textarea class="form-control" id="result-area" readonly rows="6"></textarea>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
